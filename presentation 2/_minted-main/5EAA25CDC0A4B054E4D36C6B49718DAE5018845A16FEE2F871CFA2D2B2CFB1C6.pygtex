@@ -1,0 +1,18 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{n} \PYG{o}{=} \PYG{l+m+mi}{5000}
+\PYG{n}{h} \PYG{o}{=} \PYG{l+m+mf}{0.0002}
+\PYG{c+c1}{\PYGZsh{} Creating arrays to store the results for plotting}
+\PYG{n}{x\PYGZus{}vals} \PYG{o}{=} \PYG{p}{[]}
+\PYG{n}{y\PYGZus{}vals} \PYG{o}{=} \PYG{p}{[]}
+\PYG{n}{theory\PYGZus{}values} \PYG{o}{=} \PYG{p}{[]}
+\PYG{c+c1}{\PYGZsh{} Generate values using the C function}
+\PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{n}\PYG{p}{):}
+    \PYG{n}{x\PYGZus{}vals}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n+nb}{float}\PYG{p}{(}\PYG{n}{x}\PYG{o}{.}\PYG{n}{value}\PYG{p}{))}
+    \PYG{n}{y\PYGZus{}vals}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n+nb}{float}\PYG{p}{(}\PYG{n}{y}\PYG{o}{.}\PYG{n}{value}\PYG{p}{))}
+\PYG{c+c1}{\PYGZsh{} Compute theoretical values for y using the known solution of the ODE}
+    \PYG{n}{theory\PYGZus{}y} \PYG{o}{=} \PYG{n}{math}\PYG{o}{.}\PYG{n}{exp}\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{2}\PYG{o}{*}\PYG{n}{x}\PYG{o}{.}\PYG{n}{value}\PYG{p}{)}
+    \PYG{n}{theory\PYGZus{}values}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{theory\PYGZus{}y}\PYG{p}{)}
+    \PYG{c+c1}{\PYGZsh{} Call the C function to update x and y}
+    \PYG{n}{lib}\PYG{o}{.}\PYG{n}{vals}\PYG{p}{(}\PYG{n}{ctypes}\PYG{o}{.}\PYG{n}{byref}\PYG{p}{(}\PYG{n}{x}\PYG{p}{),} \PYG{n}{ctypes}\PYG{o}{.}\PYG{n}{byref}\PYG{p}{(}\PYG{n}{y}\PYG{p}{),} \PYG{l+m+mi}{1}\PYG{p}{)}
+
+\end{Verbatim}

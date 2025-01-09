@@ -1,0 +1,14 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+cp}{\PYGZsh{}include}\PYG{c+cpf}{\PYGZlt{}stdio.h\PYGZgt{}}
+\PYG{c+cp}{\PYGZsh{}include}\PYG{c+cpf}{\PYGZlt{}math.h\PYGZgt{}}
+\PYG{k+kt}{double}\PYG{+w}{ }\PYG{n}{h}\PYG{o}{=}\PYG{l+m+mf}{0.0002}\PYG{p}{;}
+\PYG{k+kt}{float}\PYG{+w}{ }\PYG{n+nf}{dydx}\PYG{p}{(}\PYG{k+kt}{float}\PYG{+w}{ }\PYG{n}{x}\PYG{p}{,}\PYG{+w}{ }\PYG{k+kt}{float}\PYG{+w}{ }\PYG{n}{y}\PYG{p}{)\PYGZob{}}
+\PYG{+w}{	}\PYG{k}{return}\PYG{+w}{ }\PYG{p}{(}\PYG{l+m+mi}{\PYGZhy{}3}\PYG{o}{*}\PYG{n}{y}\PYG{o}{+}\PYG{n}{exp}\PYG{p}{(}\PYG{l+m+mi}{\PYGZhy{}2}\PYG{o}{*}\PYG{n}{x}\PYG{p}{));}
+\PYG{p}{\PYGZcb{}}
+\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{vals}\PYG{p}{(}\PYG{k+kt}{float}\PYG{+w}{ }\PYG{o}{*}\PYG{n}{x}\PYG{p}{,}\PYG{k+kt}{float}\PYG{+w}{ }\PYG{o}{*}\PYG{n}{y}\PYG{p}{,}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{n}\PYG{p}{)\PYGZob{}}
+\PYG{+w}{	}\PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{i}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{n}{i}\PYG{o}{\PYGZlt{}}\PYG{n}{n}\PYG{p}{;}\PYG{n}{i}\PYG{o}{++}\PYG{p}{)\PYGZob{}}
+\PYG{+w}{		}\PYG{o}{*}\PYG{n}{y}\PYG{o}{+=}\PYG{n}{dydx}\PYG{p}{(}\PYG{o}{*}\PYG{n}{x}\PYG{p}{,}\PYG{o}{*}\PYG{n}{y}\PYG{p}{)}\PYG{o}{*}\PYG{n}{h}\PYG{p}{;}
+\PYG{+w}{		}\PYG{o}{*}\PYG{n}{x}\PYG{o}{+=}\PYG{n}{h}\PYG{p}{;}
+\PYG{+w}{	}\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

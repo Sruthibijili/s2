@@ -1,0 +1,19 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{import} \PYG{n+nn}{math}
+\PYG{k+kn}{import} \PYG{n+nn}{ctypes}
+\PYG{k+kn}{import} \PYG{n+nn}{matplotlib.pyplot} \PYG{k}{as} \PYG{n+nn}{plt}
+
+\PYG{c+c1}{\PYGZsh{} Loading the .so file}
+\PYG{n}{lib} \PYG{o}{=} \PYG{n}{ctypes}\PYG{o}{.}\PYG{n}{CDLL}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}./funcs.so\PYGZsq{}}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{} Definations of return types and argument types in C code}
+\PYG{n}{lib}\PYG{o}{.}\PYG{n}{vals}\PYG{o}{.}\PYG{n}{argtypes} \PYG{o}{=} \PYG{p}{[}\PYG{n}{ctypes}\PYG{o}{.}\PYG{n}{POINTER}\PYG{p}{(}\PYG{n}{ctypes}\PYG{o}{.}\PYG{n}{c\PYGZus{}float}\PYG{p}{),} \PYG{n}{ctypes}\PYG{o}{.}\PYG{n}{POINTER}\PYG{p}{(}\PYG{n}{ctypes}\PYG{o}{.}\PYG{n}{c\PYGZus{}float}\PYG{p}{),} \PYG{n}{ctypes}\PYG{o}{.}\PYG{n}{c\PYGZus{}int}\PYG{p}{]}
+\PYG{n}{lib}\PYG{o}{.}\PYG{n}{vals}\PYG{o}{.}\PYG{n}{restype} \PYG{o}{=} \PYG{k+kc}{None}
+
+\PYG{n}{lib}\PYG{o}{.}\PYG{n}{dydx}\PYG{o}{.}\PYG{n}{argtypes} \PYG{o}{=} \PYG{p}{[}\PYG{n}{ctypes}\PYG{o}{.}\PYG{n}{c\PYGZus{}float}\PYG{p}{,} \PYG{n}{ctypes}\PYG{o}{.}\PYG{n}{c\PYGZus{}float}\PYG{p}{]}
+\PYG{n}{lib}\PYG{o}{.}\PYG{n}{dydx}\PYG{o}{.}\PYG{n}{restype} \PYG{o}{=} \PYG{n}{ctypes}\PYG{o}{.}\PYG{n}{c\PYGZus{}float}
+
+\PYG{c+c1}{\PYGZsh{} Set the initial values and parameters}
+\PYG{n}{x} \PYG{o}{=} \PYG{n}{ctypes}\PYG{o}{.}\PYG{n}{c\PYGZus{}float}\PYG{p}{(}\PYG{l+m+mf}{0.0}\PYG{p}{)}
+\PYG{n}{y} \PYG{o}{=} \PYG{n}{ctypes}\PYG{o}{.}\PYG{n}{c\PYGZus{}float}\PYG{p}{(}\PYG{l+m+mf}{1.0}\PYG{p}{)}
+\end{Verbatim}
