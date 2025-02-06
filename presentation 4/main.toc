@@ -1,0 +1,4 @@
+\beamer@sectionintoc {2}{Problem}{3}{0}{1}
+\beamer@sectionintoc {3}{Theoretical solution}{3}{0}{2}
+\beamer@sectionintoc {4}{Numerical methods}{3}{0}{3}
+\beamer@sectionintoc {5}{FIGURE}{3}{0}{4}
